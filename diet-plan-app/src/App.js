@@ -6,6 +6,7 @@ function App() {
       <div>
         <NavLink to={"/"}>login</NavLink>
         <NavLink to={"/signup"}>SignUp</NavLink>
+        <NavLink to={"/detail"}>Slider</NavLink>
       </div>
       <Outlet />
     </div>
