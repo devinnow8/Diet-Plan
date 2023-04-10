@@ -67,7 +67,9 @@ const SlickSlider = () => {
   };
   return (
     <div className="container-fluid">
-      <img src={logo} alt="logo" />
+      <div>
+        <img src={logo} alt="logo" />
+      </div>
       <div className="slider-wraper">
         <div className="container">
           <>
@@ -75,9 +77,8 @@ const SlickSlider = () => {
               quesAnswArr.map((item, index1) => {
                 return (
                   <div
-                    className={`row align-items-center slides ${
-                      value === index1 ? "active-slide" : ""
-                    }`}
+                    className={`row align-items-center slides ${value === index1 ? "active-slide" : ""
+                      }`}
                   >
                     <div className="col-md-6">
                       {value === index1 && (
