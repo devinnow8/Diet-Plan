@@ -2,7 +2,7 @@ export const detail = [
   {
     id: 1,
     question: "What’s your health goal? *",
-    
+    type: "fitnessGoals",
     option_type: "list",
     answers: [
       { option: "I want to lose weight", isSelected: false },
@@ -14,6 +14,7 @@ export const detail = [
   {
     id: 2,
     question: "How old are you? *",
+    type: "age",
     option_type: "list",
     answers: [
       { option: "25 - 35 years", isSelected: false },
@@ -25,6 +26,7 @@ export const detail = [
   {
     id: 3,
     question: "Select your gender *",
+    type: "gender",
     option_type: "list",
     answers: [
       { option: "Male", isSelected: false },
@@ -34,32 +36,45 @@ export const detail = [
   {
     id: 4,
     question: "Please enter your current weight below *",
-    description: "in Kilograms (kg)",
+    type: "weight",
+    description: ["in Kilograms (kg)"],
     option_type: null,
     answer_type: "input",
   },
   {
     id: 5,
     question: "How tall are you? Please reply in centimetres(cm) *",
-    description: "You can refer to this chart for your height in cm.",
+    description: [
+      "You can refer to this chart for your height in cm.",
+      "150 is 4 feet 11 inches",
+      "155 is 5 feet 1 inch",
+      "160 is 5 feet 3 inches",
+      "165 is 5 feet 5 inches",
+      "170 is 5 feet 7 inches",
+      "175 is 5 feet 9 inches",
+      "180 is 5 feet 11 inches",
+      "185 is 6 feet 1 inch",
+      "190 is 6 feet 3 inches",
+    ],
+    type: "height",
     option_type: "list",
     answer_type: "input",
-    answers: [
-      { option: "150 is 4 feet 11 inches", isSelected: false },
-      { option: "155 is 5 feet 1 inch", isSelected: false },
-      { option: "160 is 5 feet 3 inches", isSelected: false },
-      { option: "165 is 5 feet 5 inches", isSelected: false },
-      { option: "170 is 5 feet 7 inches", isSelected: false },
-      { option: "175 is 5 feet 9 inches", isSelected: false },
-      { option: "180 is 5 feet 11 inches", isSelected: false },
-      { option: "185 is 6 feet 1 inch", isSelected: false },
-      { option: "190 is 6 feet 3 inches", isSelected: false },
-    ],
+    // answers: [
+    //   { option: "150 is 4 feet 11 inches", isSelected: false },
+    //   { option: "155 is 5 feet 1 inch", isSelected: false },
+    //   { option: "160 is 5 feet 3 inches", isSelected: false },
+    //   { option: "165 is 5 feet 5 inches", isSelected: false },
+    //   { option: "170 is 5 feet 7 inches", isSelected: false },
+    //   { option: "175 is 5 feet 9 inches", isSelected: false },
+    //   { option: "180 is 5 feet 11 inches", isSelected: false },
+    //   { option: "185 is 6 feet 1 inch", isSelected: false },
+    //   { option: "190 is 6 feet 3 inches", isSelected: false },
+    // ],
   },
   {
     id: 6,
     question: "Are you at risk of any medical condition? *",
-    description: "You can refer to this chart for your height in cm.",
+    type: "medicalHistory",
     option_type: "list",
     answer_type: null,
     answers: [
