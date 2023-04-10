@@ -1,22 +1,21 @@
-  
-  @import "bootstrap/dist/css/bootstrap.min.css";
-  @import 'animate.css';
-  html{
-    scroll-behavior: smooth;
-  }
-  body{
-    font-family: 'Inter', sans-serif;
-  }
-  .slick-slide img {
-    margin: auto;
-  }
-  .slider-wraper {
-    padding: 2rem;
-    height: 90vh;
-    position: relative;
-    transition: all 600ms ease 0s;
-    .slider-content{
-    background: #FFE9C2;
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "animate.css";
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", sans-serif;
+}
+.slick-slide img {
+  margin: auto;
+}
+.slider-wraper {
+  padding: 2rem;
+  height: 90vh;
+  position: relative;
+  transition: all 600ms ease 0s;
+  .slider-content {
+    background: #ffe9c2;
     border-radius: 20px;
     padding: 39px 57px;
     transition: all 600ms ease 0s;
@@ -27,99 +26,100 @@
       color: rgba(176, 112, 0, 0.4);
       margin-bottom: 10px;
     }
-    h2{
-      font-family: 'Inter';
+    h2 {
+      font-family: "Inter";
       font-style: normal;
       font-weight: 700;
       font-size: 25px;
-    line-height: 37px;
+      line-height: 37px;
       color: #000000;
     }
     .primary-solid {
       margin-top: 30px;
     }
-    .description{
+    .description {
       font-weight: 500;
       font-size: 22px;
       line-height: 27px;
       color: #171717;
-      }
-      .answer-input{
-        font-weight: 500;
-        font-size: 22px;
-        line-height: 27px;
-        color: #000000;
-        opacity: 0.4;
-        border: none;
-        border-bottom: 1px solid #A8A8A8;
+    }
+    .answer-input {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 27px;
+      color: #000000;
+      opacity: 0.4;
+      border: none;
+      border-bottom: 1px solid #a8a8a8;
+      box-shadow: none;
+      background-color: transparent;
+      margin-top: 29px;
+      &:focus {
+        outline: none;
         box-shadow: none;
-        background-color: transparent;
-        margin-top: 29px;
-        &:focus{
-          outline: none;
-          box-shadow: none;
-        }
       }
     }
-    .options{
-      border: 1px solid #B07000;
-      border-radius: 4px;
-      font-family: 'Inter';
+  }
+  .options {
+    border: 1px solid #b07000;
+    border-radius: 4px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+    padding: 8px 6px;
+    color: #171717;
+    &.active {
+      border: 1px solid #b07000;
+      color: #ef0a0a;
+    }
+    .option {
+      background: #ffe9c2;
+      border: 1px solid #a8a8a8;
+      border-radius: 2px;
       font-style: normal;
       font-weight: 500;
       font-size: 16px;
       line-height: 27px;
-      padding: 8px 6px;
       color: #171717;
-      &.active{
-        border: 1px solid #B07000;
-        color: #B07000;
-      }
-      .option {
-        background: #FFE9C2;
-        border: 1px solid #A8A8A8;
-        border-radius: 2px;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 27px;
-        color: #171717;
-        display: inline-block;
-        width: 32px;
-        height: 30px;
-        text-align: center;
-        margin-right: 13px;
-      }
+      display: inline-block;
+      width: 32px;
+      height: 30px;
+      text-align: center;
+      margin-right: 13px;
     }
   }
-  .primary-solid{
-    background: #B07000;
-    border-radius: 5px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 27px;
-    color: #FFFFFF;
-    width: 170px;
-    height: 46px;
-    border: unset;
+}
+
+.primary-solid {
+  background: #b07000;
+  border-radius: 5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 27px;
+  color: #ffffff;
+  width: 170px;
+  height: 46px;
+  border: unset;
+}
+.navigation {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #ffffff;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  button {
+    border: none;
+    background-color: white;
   }
-  .navigation {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
-    button {
-      border: none;
-      background-color: white;
-  }
-  }
-  .slides{
-    display: none;
-  }
-  .active-slide {
-    display: inline-flex;
-  }
+}
+.slides {
+  display: none;
+}
+.active-slide {
+  display: inline-flex;
+}

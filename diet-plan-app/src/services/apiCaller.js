@@ -20,6 +20,7 @@ export const getDataApi = ({ path = "no-path-provided", data = {} }) => {
 export const postDataApi = ({ path = "no-path-provided", data = {} }) => {
   try {
     return new Promise((resolve, reject) => {
+      console.log("====>path", path, data);
       customAxios
         .post(path, data)
         .then((response) => {

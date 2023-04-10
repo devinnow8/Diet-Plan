@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Login, SignUp, DetaliSlider } from "../screens";
+import { Login, SignUp, DetaliSlider, Recipe } from "../screens";
+
 import App from "../App";
 
 export const router = createBrowserRouter([
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
       {
         path: "detail",
         element: <DetaliSlider />,
+      },
+      {
+        path: "recipe",
+        element: <Recipe />,
       },
     ],
   },

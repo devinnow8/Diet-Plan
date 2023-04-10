@@ -1,35 +1,51 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import axios from "axios";
 
-import * as services from "../services";
-import { errorAlert, successAlert } from "../utils";
-import {
-  loginRequest,
-  loginSuccess,
-  loginFailure,
-} from "../redux/reducer/auth";
+import { store } from "../redux/store";
 
-function* authLoginRequest(action) {
-  try {
-    const response = yield call(
-      services.loginRequest,
-      action.payload.requestBody,
-    );
-    const { status, statusText, data = [] } = response || {};
-    if (status === 200) {
-      successAlert("Successfully logged in.");
-      yield put(loginSuccess(data));
-    } else {
-      errorAlert("Failed to login");
-      yield put(loginFailure());
-    }
-  } catch (e) {
-    errorAlert("Failed to login");
-    yield put(loginFailure());
+const REACT_APP_BASE_URL = "http://192.168.1.11:4001/";
+
+const customAxios = axios.create({
+  baseURL: `${REACT_APP_BASE_URL}`,
+  headers: {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+  },
+});
+
+const requestHandler = (request) => {
+  const accessToken = store?.getState().auth.userData.jwt;
+  if (accessToken) {
+    request.headers.Authorization = `Bearer ${accessToken}`;
   }
-}
+  return request;
+};
 
-function* authSaga() {
-  yield takeLatest(loginRequest.type, authLoginRequest);
-}
+const responseHandler = (response) => {
+  if (response?.data?.status === 401) {
+  }
 
-export default authSaga;
+  return response;
+};
+
+const errorHandler = (error) => {
+  if (error?.response?.status === 403) {
+    // Router.push("/login");
+  }
+  return error.response;
+};
+
+// Step-3: Configure/make use of request & response interceptors from Axios
+// Note: You can create one method say configureInterceptors, add below in that,
+// export and call it in an init function of the application/page.
+customAxios.interceptors.request.use(
+  (request) => requestHandler(request),
+  (error) => errorHandler(error),
+);
+
+customAxios.interceptors.response.use(
+  (response) => responseHandler(response),
+  (error) => errorHandler(error),
+);
+
+// Step-4: Export the newly created Axios instance to be used in different locations.
+export default customAxios;
